@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assingement 14 Function</title>
+</head>
+
+<body>
+    <script>
+        // //question 01
+        function dateTo() {
+            var now = new Date();
+            console.log(now.toLocaleString());
+        }
+
+        dateTo();
+
+        // //question 02
+        function greetUser(firstName, lastName) {
+            var fullName = firstName + lastName;
+            console.log("Hello " + fullName + "! Nice to meet you");
+        }
+
+        greetUser("John", " Doe");
+
+        // //question 03
+        function addNumbers() {
+            var num1 = parseFloat(prompt("Enter the first number"));
+            var num2 = parseFloat(prompt("Enter the second number"));
+            var sum = num1 + num2;
+            return sum;
+        }
+
+        var result = addNumbers()
+        console.log(result);
+
+        // //question 04
+        function calculate(num1, num2, operator) {
+            let result;
+            switch (operator) {
+                case "+":
+                    result = num1 + num2;
+                    break;
+                case "-":
+                    result = num1 - num2;
+                    break;
+                case "*":
+                    result = num1 * num2;
+                    break;
+                case "/":
+                    result = num1 / num2;
+                    break;
+                default:
+                    console.log("Invalid operator");
+                    return null;
+            }
+            return result;
+        }
+        var num1 = parseFloat(prompt("Enter the first number"));
+        var num2 = parseFloat(prompt("Enter the second number"));
+        var operator = prompt("Enter the operator (+, -, *, /):");
+        var result = calculate(num1, num2, operator);
+        if (result !== null) {
+            document.write(`<h2>The result is: ${result}</h2>`);
+        }
+
+        // //question 05
+        function square(num) {
+            return num * num;
+        }
+
+        var result = square(5);
+        console.log(result);
+
+        // //question 06
+       function factorial(num){
+        if(num > 1){
+            return num * factorial(num - 1);
+        }else{
+            return 1
+        }
+       }
+       console.log(factorial(5));
+
+        // //question 07
+        function count(start, end) {
+            for (var i = start; i <= end; i++) {
+                document.write(i + "<br>")
+            }
+        }
+        count(1, 5)
+
+        // //question 08
+        function calculateHypotenuse(base, perpendicular) {
+            function calculateSquare(num) {
+                return num * num;
+            }
+                                            // 3
+            var baseSquare = calculateSquare(base);      // 4
+            var perpendicularSquare = calculateSquare(perpendicular);
+            var hypotenuseSquare = baseSquare + perpendicularSquare; // 7
+            var hypotenuse = Math.sqrt(hypotenuseSquare);
+           
+            return hypotenuse;
+        }
+
+        var result = calculateHypotenuse(3, 4);
+        console.log(result); // Output: 5
+
+        // //question 09
+        function calculateRectangleArea(width, height) {
+            return width * height;
+        }
+        var result1 = calculateRectangleArea(5, 6);
+        console.log(result1);
+
+        // //question 10
+        function isPalindrome(str) {
+            str = str.replace(/[^0-9a-z]/gi, '').toLowerCase();
+            return str === str.split('').reverse().join('');
+        }
+
+        console.log(isPalindrome('racecar')); // Output: true
+        console.log(isPalindrome('Hello, world!')); // Output: false
+
+        // //question 11
+        function capital(){
+            var upper  = "the quick brown fox";
+            var lower = upper.split(" ");
+            for (var i =0; i < lower.length; i++){
+                lower[i]=lower[i][0].toUpperCase()+lower[i].slice(1).toLowerCase()
+            }
+            console.log("EXAMPLE STRING : " + upper);
+            var d = lower.join(" ")
+            console.log("EXPECTED OUTPUT : " + d);
+        }
+        capital();
+
+        // //question 12
+        function findLongestWord(str) {
+            var words = str.split(' ');
+            let longestWord = '';
+            words.forEach(word => {
+                if (word.length > longestWord.length) {
+                    longestWord = word;
+                }
+            });
+
+            return longestWord;
+        }
+
+        console.log(findLongestWord('Web Development Tutorial'));
+
+        // //question 13
+        function countOccurrences(str, letter) {
+            let count = 0;
+            for (let i = 0; i < str.length; i++) {
+                if (str.charAt(i) === letter) {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+        console.log(countOccurrences('JSResourceS.com', 'o')); // Output: 2
+
+        //question 14
+        function calcArea(radius) {
+            var area = Math.PI * Math.pow(radius, 2);
+            console.log(`The area is ${area}`);
+        }
+        calcArea(5);
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
